@@ -5,12 +5,16 @@ public class AbstractFactoryMethodTest {
     public static void main(String[] args) {
 
         IAnimationFactory iAnimationFactory = new ScienceFictionAnimationFactory();
-        iAnimationFactory.createManga().draw();
-        iAnimationFactory.createCosplay().cos();
+        IManga iManga = iAnimationFactory.createManga();
+        iManga.draw();
+        ICosplay iCosplay = iAnimationFactory.createCosplay();
+        iCosplay.cos();
 
         iAnimationFactory = new RiskAnimationFactory();
-        iAnimationFactory.createManga().draw();
-        iAnimationFactory.createCosplay().cos();
+        iManga = iAnimationFactory.createManga();
+        iManga.draw();
+        iCosplay = iAnimationFactory.createCosplay();
+        iCosplay.cos();
 
     }
 
