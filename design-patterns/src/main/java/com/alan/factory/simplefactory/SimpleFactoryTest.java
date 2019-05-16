@@ -8,15 +8,11 @@ public class SimpleFactoryTest {
 
     public static void main(String[] args) {
 
-//        IAnimation iAnimation = new ScienceFictionAnimation();
-//        iAnimation.watch();
-
-        AnimationFactory animationFactory = new AnimationFactory();
-//        IAnimation iAnimation = animationFactory.create("ScienceFiction");
-//        IAnimation iAnimation = animationFactory.create("com.alan.factory.ScienceFictionAnimation");
-        IAnimation iAnimation = animationFactory.create(ScienceFictionAnimation.class);
+//        IAnimation iAnimation = AnimationFactory.create("ScienceFiction");
+//        IAnimation iAnimation = AnimationFactory.create("com.alan.factory.ScienceFictionAnimation");
+        IAnimation iAnimation = AnimationFactory.create(ScienceFictionAnimation.class);
         iAnimation.watch();
-        iAnimation = animationFactory.create(RiskAnimation.class);
+        iAnimation = AnimationFactory.create(RiskAnimation.class);
         iAnimation.watch();
 
     }

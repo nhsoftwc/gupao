@@ -4,7 +4,7 @@ import com.alan.factory.IAnimation;
 
 public class AnimationFactory {
 
-//    public IAnimation create(String name) {
+//    public static IAnimation create(String name) {
 //        if ("ScienceFiction".equals(name)) {
 //            return new ScienceFictionAnimation();
 //        } else {
@@ -12,7 +12,7 @@ public class AnimationFactory {
 //        }
 //    }
 
-//    public IAnimation create(String className) {
+//    public static IAnimation create(String className) {
 //
 //        try {
 //            if (!(null == className || "".equals(className))) {
@@ -25,7 +25,7 @@ public class AnimationFactory {
 //        return null;
 //    }
 
-    public IAnimation create(Class clazz) {
+    public static IAnimation create(Class clazz) {
 
         try {
             if (null != clazz) {
