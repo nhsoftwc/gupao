@@ -1,7 +1,5 @@
 package com.alan.singleton.test;
 
-import com.alan.singleton.lazy.LazySimpleSingleton;
-
 public class LazySimpleSingletonTest {
 
     public static void main(String[] args) {
