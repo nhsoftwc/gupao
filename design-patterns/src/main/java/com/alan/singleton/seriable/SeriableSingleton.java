@@ -21,9 +21,16 @@ public class SeriableSingleton implements Serializable {
         return INSTANCE;
     }
 
-    // 重写readResolve方法，只不过事覆盖了反序列化出来的对象
+    // 重写readResolve方法，只不过是覆盖了反序列化出来的对象
     // 还是创建了两次，发生在JVM层面，相对来说比较安全
     // 之前反序列化出来的对象会被GC回收
+    // 序列化的readObject()方法会判断SeriableSingleton类是否有构造方法，
+    // 有的话就重新new一个对象，没有就返回null，显然会重新new，
+    // 这样就会导致反序列化出来的对象跟原对象不是同一个，
+    // 然后又会判断SeriableSingleton类有没有readResolve()方法，
+    // 有的话就用readResolve()返回的对象覆盖刚才new出来的对象，
+    // 没有的话就还是用刚才new出来的对象
+    // 重写此方法防止反序列化破坏单例
     private  Object readResolve(){
         return  INSTANCE;
     }

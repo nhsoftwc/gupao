@@ -2,8 +2,10 @@ package com.alan.singleton.lazy;
 
 // 全程没有用到synchronized
 // 性能最优的一种写法
+// 作业：理解内部类的执行逻辑
 public class LazyInnerClassSingleton {
 
+    // 虽然构造方法私有化了，但还是会被反射攻击
     private LazyInnerClassSingleton() {
         // 防止反射攻击
         if (LazyHolder.lazy != null) {
