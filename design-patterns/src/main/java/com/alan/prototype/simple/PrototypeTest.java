@@ -1,5 +1,7 @@
 package com.alan.prototype.simple;
 
+import com.alan.prototype.deep.JinGuBang;
+
 import java.util.ArrayList;
 import java.util.List;
 
